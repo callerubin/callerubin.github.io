@@ -106,7 +106,7 @@
 <li><a href="https://troe27.github.io/UU-GWAS06/#what-does-vep-provide">What does VEP provide?</a></li>
 </ul>
 </li>
-<li><a href="https://troe27.github.io/UU-GWAS06/#5-2-using-vep-to-annotate-the-SnpEff-modifiers-annotated-as-having-high-impact">5-2 Using VEP to annotate the SnpEff modifiers annotated as having HIGH impact</a>
+<li><a href="https://troe27.github.io/UU-GWAS06/#5-2-using-vep-to-annotate-the--modifiers-annotated-as-having-high-impact">5-2 Using VEP to annotate the  modifiers annotated as having HIGH impact</a>
 <ul>
 <li><a href="https://troe27.github.io/UU-GWAS06/#exploring-and-navigating-the-vep-results-page">Exploring and navigating the VEP results page</a></li>
 <li><a href="https://troe27.github.io/UU-GWAS06/#downloading-the-results">Downloading the results</a></li>
@@ -121,7 +121,7 @@
 <h3 id="overview">1-1 Overview</h3>
 <p>In this practical you will learn how to use well-established methods and resources to annotate a collection of variants to determine if a given substitution has a deleterious effect and possibly pathological consequences.</p>
 <p>We will follow the example in the paper by <a href="https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0227859&amp;type=printable">Wang et al., PLoS One, 2020, 15(1)</a> presented in the lecture and focus on the variation associated with the gene <a href="https://www.genecards.org/cgi-bin/carddisp.pl?gene=CRYBA4&amp;keywords=cryba4"><em>CRYBA4</em> </a> (crystallin beta A4).</p>
-<p>You will start with a large collection of SNPs reported for <em>CRYBA4</em> in the <a href="https://www.ncbi.nlm.nih.gov/books/NBK21088/">dbSNP database</a> and you will annotate them using the command-line annotation and functional prediction tool <a href="http://pcingola.github.io/SnpEff/se_introduction/">SnpEff</a>. You will visualize some of these variants using the <a href="https://genome.ucsc.edu/training/index.html">UCSC Genome Browser</a> to understand their position and properties in the context of the genomic region of the <em>CRYBA4</em> gene. As time permits, you will also annotate a subset of these variants using the online tool <a href="https://www.youtube.com/watch?v=6MltwC-ydN0">ENSEMBLE Variant Effect Predictor (VEP)</a>.</p>
+<p>You will start with a large collection of SNPs reported for <em>CRYBA4</em> in the <a href="https://www.ncbi.nlm.nih.gov/books/NBK21088/">dbSNP database</a> and you will annotate them using the command-line annotation and functional prediction tool <a href="http://pcingola.github.io//se_introduction/"></a>. You will visualize some of these variants using the <a href="https://genome.ucsc.edu/training/index.html">UCSC Genome Browser</a> to understand their position and properties in the context of the genomic region of the <em>CRYBA4</em> gene. As time permits, you will also annotate a subset of these variants using the online tool <a href="https://www.youtube.com/watch?v=6MltwC-ydN0">ENSEMBLE Variant Effect Predictor (VEP)</a>.</p>
 <h3 id="learning-goals">1-2 Learning goals</h3>
 <p>The goal of the practical is to familiarize you with annotation tools that you could apply to any set of variants of interest, and also to enhance your knowledge on how to use the UCSC Genome Browser for extracting important information about a variant or a gene region.</p>
 <h3 id="references-and-materials">1-4 References and Materials</h3>
@@ -130,7 +130,7 @@
 <p>The paper discussed in the lecture: <a href="https://troe27.github.io/UU-GWAS06/wang_etal_2020.pdf">Wang et al., PLoS One, 2020, 15(1)</a>.</p>
 </li>
 <li>
-<p>SnpEff reference: <a href="http://pcingola.github.io/SnpEff/adds/SnpEff_paper.pdf">Cingolani et al (2012)</a>.</p>
+<p> reference: <a href="http://pcingola.github.io//adds/_paper.pdf">Cingolani et al (2012)</a>.</p>
 </li>
 <li>
 <p>UCSC Genome Browser database reference: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7779060/">Gonzalez et al., Nucleic Acids Res. 2021, 49(D1): D1046–D1057</a>.</p>
@@ -162,16 +162,16 @@
 </li>
 </ul>
 <p><img src="./Interpreting_the_results_lab_files/Introduction_Figure-2.png" alt="INT_FIG2"></p>
-<h2 id="identifying-deleterious-snps-in-the-emcryba4em-gene-using-snpeff">3  Identifying deleterious SNPs in the <em>CRYBA4</em> gene using SnpEff</h2>
+<h2 id="identifying-deleterious-snps-in-the-emcryba4em-gene-using-">3  Identifying deleterious SNPs in the <em>CRYBA4</em> gene using </h2>
 <p>The goal of this exercise is to familiarise yourself with a common annotation tool, and learn how to interpret the results.</p>
 <p>For this exercise, we are going to annotate a <code>.vcf</code>.
 It was created by subsetting a larger (184GB) Database-style <code>.vcf</code>, <a href="https://www.ncbi.nlm.nih.gov/books/NBK21088/">the Single Nucleotide Polymorphism Database (dbSNP)</a>, which you can <a href="https://ftp.ncbi.nlm.nih.gov/snp/latest_release/VCF/">download from the NCBI ftp-server</a>.
 The file we are working with is much smaller and contains variants from a small subsection of the human chromosome 22.</p>
-<p>For annotating these variants, we will be using <a href="http://pcingola.github.io/SnpEff/">SnpEff</a> by <a href="http://pcingola.github.io/SnpEff/adds/SnpEff_paper.pdf">Cingolani et al (2012)</a>.
+<p>For annotating these variants, we will be using <a href="http://pcingola.github.io//">SnpEff</a> by <a href="http://pcingola.github.io/SnpEff/adds/SnpEff_paper.pdf">Cingolani et al (2012)</a>.
 We will be working on Rackham for this, where SnpEff is installed as a module.</p>
 <ul>
 <li>log into rackham, start an interactive session.</li>
-<li>load the modules <code>bioinfo-tools</code> and <code>snpEff/4.3t</code></li>
+<li>load the module <code>snpEff/5.4a-GCCcore-13.3.0-Java-21</code></li>
 <li>copy the file <code>/proj/g2020004/private/computer_practicals/GWAS06/20220425_chr22_targetregion.recode_diff_chrname.vcf</code> to your working directory.</li>
 </ul>
 <p>SnpEff works by comparing the positions of these SNPs against a database of genes, ORFs and other genome annotations to estimate the function and impact of individual SNPs.
@@ -182,7 +182,7 @@ You can have a look at the list of possible annotations using <code>SnpEff datab
 <li>Can you tell which reference our <code>.vcf</code>file was built on? If you are unsure where to look, remember the <a href="https://samtools.github.io/hts-specs/VCFv4.2.pdf">VCFv4.2 fileformat specifications</a>.</li>
 </ul>
 <p>We will be using the <code>eff </code> command within SnpEff to annotate our <code>.vcf</code>-file and generate a <code>.html</code> report:</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SnpEff eff GRCh38.86 file.vcf  <span class="o">&gt;</span> file.ann.vcf
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>snpEff eff GRCh38.86 file.vcf  <span class="o">&gt;</span> file.ann.vcf
 </code></pre></div></div>
 <p>this will take a minute or two.</p>
 <ul>
